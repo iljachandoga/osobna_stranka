@@ -1,46 +1,118 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #f3f4f6;
+  background: #f5f6f7;
 }
+
+/* Fixný horný navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #218838; /* zelená */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.nav-left .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.nav-right a:hover {
+  text-decoration: underline;
+}
+
+/* Hlavný layout */
 .container {
   display: flex;
-  height: 100vh;
+  margin-top: 60px; /* aby obsah nebol pod navbarom */
+  height: calc(100vh - 60px);
 }
+
 .sidebar {
   width: 240px;
-  background: #1e293b;
+  background: #2c3e50;
   color: white;
   padding: 20px;
+  overflow-y: auto;
 }
+
 .sidebar h2 {
   margin-top: 0;
-  font-size: 20px;
-  border-bottom: 1px solid #334155;
-  padding-bottom: 10px;
 }
+
 .sidebar ul {
   list-style: none;
   padding: 0;
 }
-.sidebar ul li {
-  margin: 10px 0;
-}
+
 .sidebar a {
-  color: #cbd5e1;
+  color: #ecf0f1;
   text-decoration: none;
   display: block;
-  padding: 8px 10px;
-  border-radius: 6px;
-  transition: background 0.2s ease;
+  padding: 8px;
+  border-radius: 4px;
 }
+
 .sidebar a:hover {
-  background: #334155;
-  color: #f8fafc;
+  background: #34495e;
 }
+
 .content {
   flex-grow: 1;
   padding: 30px;
   overflow-y: auto;
   background: white;
+}
+
+/* Modal (Cal.com) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 900px;
+  height: 80%;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
 }
