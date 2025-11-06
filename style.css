@@ -1,17 +1,16 @@
-/* ===== ZÁKLADNÝ ŠTÝL ===== */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #f3f4f6;
 }
 
-/* ===== FIXNÝ HORNÝ NAVBAR ===== */
+/* HORNÝ PANEL */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #218838; /* zelená */
+  background: #218838;
   color: white;
   display: flex;
   align-items: center;
@@ -20,13 +19,11 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Logo vľavo */
 .nav-left .logo {
   font-weight: bold;
   font-size: 20px;
 }
 
-/* Menu vpravo */
 .nav-right {
   display: flex;
   gap: 25px;
@@ -46,22 +43,28 @@ body {
   text-decoration: underline;
 }
 
-/* ===== LAYOUT STRÁNKY ===== */
+/* LAYOUT */
 .container {
   display: flex;
-  margin-top: 65px; /* aby obsah nebol pod navbarom */
+  margin-top: 65px;
   height: calc(100vh - 65px);
 }
 
-/* ===== SIDEBAR ===== */
+/* SIDEBAR */
 .sidebar {
   width: 240px;
   background: #2c3e50;
   color: white;
   padding: 25px 20px 20px 20px;
   overflow-y: auto;
-  border-top: 4px solid #218838; /* jemné oddelenie od horného pruhu */
+  border-top: 4px solid #218838;
   box-shadow: inset -1px 0 0 #e5e7eb;
+  transition: transform 0.3s ease;
+}
+
+/* Skrytý stav */
+.sidebar.hidden {
+  transform: translateX(-250px);
 }
 
 .sidebar h2 {
@@ -93,7 +96,7 @@ body {
   background: #34495e;
 }
 
-/* ===== HLAVNÝ OBSAH ===== */
+/* HLAVNÝ OBSAH */
 .content {
   flex-grow: 1;
   padding: 30px;
@@ -101,7 +104,7 @@ body {
   background: white;
 }
 
-/* ===== MODÁLNE OKNO PRE CAL.COM ===== */
+/* MODÁLNE OKNO */
 .modal {
   display: none;
   position: fixed;
@@ -145,19 +148,21 @@ body {
   color: #000;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
 
   .sidebar {
-    width: 100%;
-    height: auto;
+    position: fixed;
+    height: calc(100% - 60px);
+    top: 60px;
+    left: 0;
+    z-index: 900;
   }
 
-  .nav-right {
-    flex-wrap: wrap;
-    gap: 15px;
+  .sidebar.hidden {
+    transform: translateX(-260px);
   }
 }
