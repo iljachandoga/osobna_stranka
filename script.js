@@ -6,6 +6,28 @@ function loadText(file) {
     })
     .catch(() => {
       document.getElementById("content").innerHTML =
-        "<p>⚠️ Text sa nepodarilo načítať. Skontroluj názov súboru.</p>";
+        "<p>⚠️ Text sa nepodarilo načítať.</p>";
     });
 }
+
+// Cal.com modálne okno
+function openModal() {
+  const modal = document.getElementById("modal");
+  const iframe = document.getElementById("calFrame");
+  iframe.src = "https://cal.com/tvoj-link"; // ← sem vlož svoj Cal.com link
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+  const iframe = document.getElementById("calFrame");
+  iframe.src = "";
+  modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+  const modal = document.getElementById("modal");
+  if (event.target === modal) {
+    closeModal();
+  }
+};
