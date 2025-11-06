@@ -7,6 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Horný navigačný panel -->
+  <header class="navbar">
+    <div class="nav-left">
+      <span class="logo">Ortopédia</span>
+    </div>
+    <nav class="nav-right">
+      <a href="#" onclick="loadText('texty/onas.html')">O nás</a>
+      <a href="#" onclick="loadText('texty/dokumenty.html')">Dokumenty</a>
+      <a href="#" onclick="loadText('texty/cennik.html')">Cenník</a>
+      <a href="#" onclick="loadText('texty/novinky.html')">Novinky</a>
+      <a href="#" onclick="openModal()">Objednanie</a>
+      <a href="#" onclick="loadText('texty/kontakt.html')">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- Hlavný kontajner -->
   <div class="container">
     <nav class="sidebar">
       <h2>Študijné texty</h2>
@@ -17,11 +33,21 @@
         <li><a href="#" onclick="loadText('texty/dolna.html')">Dolná končatina</a></li>
       </ul>
     </nav>
+
     <main class="content" id="content">
       <h1>Vitaj v študijných textoch ortopédie</h1>
       <p>Na ľavej strane si vyber oblasť, ktorú chceš študovať.</p>
     </main>
   </div>
+
+  <!-- Modálne okno pre Cal.com -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <iframe id="calFrame" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
