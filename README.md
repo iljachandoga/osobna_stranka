@@ -1,19 +1,17 @@
-# 🦴 Ortopedické študijné texty
+# 🦴 Ortopedické študijné texty (v5)
 
-Jednoduchá statická webová stránka pre študijné materiály z ortopédie.
+Moderná statická webová stránka pre ortopedické materiály.
 
-## 📂 Štruktúra
-- `index.html` – hlavná stránka s navigáciou
-- `texty/` – priečinok s HTML textami (hlava, chrbtica, končatiny)
-- `style.css` – štýly
-- `script.js` – JavaScript pre načítanie textov
-- `Dockerfile` – pre deploy cez Coolify (Nginx)
+## ✳️ Funkcie
+- Fixný horný zelený panel s navigáciou
+- Bočný panel „Študijné texty“, ktorý sa vysúva po kliknutí na **Texty**
+- „Objednanie“ otvára Cal.com vo vnorenom okne (iframe modal)
+- Plne kompatibilné s Docker + Coolify
 
 ## 🚀 Deploy
-1. Nahraj repozitár na GitHub  
-2. V **Coolify**:
-   - Vyber *New App*  
-   - Prepoj s GitHub repozitárom  
-   - Buildpack: **Dockerfile**  
-   - Port: **80**  
-3. Deploy – stránka sa spustí na tvojom RPI (napr. cez Cloudflare Tunnel).
+1. Nahraj repozitár na GitHub
+2. V **Coolify** vyber:
+   - **Build type:** Dockerfile
+   - **Port:** 80
+3. Deployni – beží cez Nginx.
+
