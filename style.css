@@ -1,35 +1,163 @@
-/* ===== ZÁKLADNÝ ŠTÝL STRÁNKY ===== */
+/* ===== ZÁKLADNÝ ŠTÝL ===== */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #f5f6f7;
+  background-color: #f3f4f6;
 }
 
-/* ===== HORNÝ FIXNÝ PANEL ===== */
+/* ===== FIXNÝ HORNÝ NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #218838; /* zelená farba */
+  background: #218838; /* zelená */
   color: white;
   display: flex;
   align-items: center;
   padding: 10px 30px;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* Logo vľavo */
 .nav-left .logo {
   font-weight: bold;
   font-size: 20px;
-  letter-spacing: 0.5px;
 }
 
-/* Navigácia vpravo vedľa loga */
+/* Menu vpravo */
 .nav-right {
   display: flex;
-  gap: 24px;
+  gap: 25px;
   margin-left: 40px;
-  flex-wrap: wrap;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: opacity 0.2s;
+}
+
+.nav-right a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ===== LAYOUT STRÁNKY ===== */
+.container {
+  display: flex;
+  margin-top: 65px; /* aby obsah nebol pod navbarom */
+  height: calc(100vh - 65px);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 240px;
+  background: #2c3e50;
+  color: white;
+  padding: 25px 20px 20px 20px;
+  overflow-y: auto;
+  border-top: 4px solid #218838; /* jemné oddelenie od horného pruhu */
+  box-shadow: inset -1px 0 0 #e5e7eb;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom: 1px solid #44576b;
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: #ecf0f1;
+  text-decoration: none;
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: #34495e;
+}
+
+/* ===== HLAVNÝ OBSAH ===== */
+.content {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background: white;
+}
+
+/* ===== MODÁLNE OKNO PRE CAL.COM ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 900px;
+  height: 80%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #444;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
