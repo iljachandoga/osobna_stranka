@@ -17,6 +17,7 @@
       <a href="#" onclick="loadText('texty/dokumenty.html')">Dokumenty</a>
       <a href="#" onclick="loadText('texty/cennik.html')">Cenník</a>
       <a href="#" onclick="loadText('texty/novinky.html')">Novinky</a>
+      <a href="#" onclick="toggleSidebar()">Texty</a>
       <a href="#" onclick="openModal()">Objednanie</a>
       <a href="#" onclick="loadText('texty/kontakt.html')">Kontakt</a>
     </nav>
@@ -24,7 +25,7 @@
 
   <!-- Hlavný kontajner -->
   <div class="container">
-    <nav class="sidebar">
+    <nav class="sidebar hidden" id="sidebar">
       <h2>Študijné texty</h2>
       <ul>
         <li><a href="#" onclick="loadText('texty/hlava.html')">Hlava</a></li>
